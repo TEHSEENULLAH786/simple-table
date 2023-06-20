@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th (click)="sort('name')">Name</th>
+      <th (click)="sort('username')">Username</th>
+      <th (click)="sort('address.geo.lat')">Latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.address.geo.lat }}</td>
+    </tr>
+  </tbody>
+</table>
