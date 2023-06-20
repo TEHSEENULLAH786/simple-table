@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../table.service';
+import { tableService } from '../table.service';
 
 @Component({
   selector: 'app-simple-table',
@@ -11,14 +11,14 @@ export class SimpleTableComponent implements OnInit {
   sortedColumn: string;
   sortDirection: string;
 
-  constructor(private userService: UserService) {}
+  constructor(private tableService: tableService) {}
 
   ngOnInit() {
     this.getUsers();
   }
 
   getUsers() {
-    this.userService.getUsers().subscribe(
+    this.tableService.getUsers().subscribe(
       (users: any[]) => {
         this.users = users;
       },
